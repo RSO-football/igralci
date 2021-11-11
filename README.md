@@ -1,0 +1,2 @@
+# igralci
+Seznam vseh igralcev
