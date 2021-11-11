@@ -1,0 +1,1 @@
+INSERT INTO igralci_metadata (name, description) VALUES ('Rok Bosil', 'Najjaci igrac');
