@@ -10,7 +10,7 @@ public class IgralciMetadataConverter {
         IgralciMetadata dto = new IgralciMetadata();
         dto.setIgralecId(entity.getId());
         dto.setName(entity.getName());
-        dto.setDescription(dto.getDescription());
+        dto.setDescription(entity.getDescription());
 
         return dto;
     }

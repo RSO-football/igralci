@@ -9,8 +9,8 @@ kumuluzee:
       port: 8080
   datasources:
     - jndi-name: jdbc/IgralciMetadataDS
-      connection-url: jdbc:postgresql://localhost:5432/igralci-metadata
-      username: dbuser
+      connection-url: jdbc:postgresql://localhost:5432/igralci
+      username: postgres
       password: postgres
   health:
     checks:
