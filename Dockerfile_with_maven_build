@@ -1,11 +1,11 @@
-FROM maven:3.6.3-openjdk-15 AS build
+FROM maven:3.6.3-openjdk-13 AS build
 COPY ./ /app
 WORKDIR /app
 RUN mvn --show-version --update-snapshots --batch-mode clean package
 
-FROM adoptopenjdk:15-jre-hotspot
+FROM adoptopenjdk:13-jre-hotspot
 RUN mkdir /app
 WORKDIR /app
-COPY --from=build ./app/api/target/igralci-api-1.0.0-SNAPSHOT.jar /app
+COPY --from=build ./app/api/target/igralci-api-1.0-SNAPSHOT.jar /app
 EXPOSE 8080
-CMD ["java", "-jar", "igralci-api-1.0.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "igralci-api-1.0-SNAPSHOT.jar"]
