@@ -36,4 +36,4 @@ jobs:
       with:
         file: ./Dockerfile_with_maven_build
         push: true
-        tags: ts4894/igrisceslika:${{ steps.time.outputs.time }}
+        tags: ts4894/igralci:${{ steps.time.outputs.time }}

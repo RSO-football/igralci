@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: igralci-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: igralci
+  template:
+    metadata:
+      labels:
+        app: igralci
+    spec:
+      containers:
+        - image: prporso/image-catalog:2021-11-02-17-26-12
+          name: igralci
+          env:
+            - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
+              value: jdbc:postgresql://lallah.db.elephantsql.com:5432/kryfltbl
+            - name: KUMULUZEE_DATASOURCES0_USERNAME
+              value: kryfltbl
+            - name: KUMULUZEE_DATASOURCES0_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pg-pass
+                  key: KUMULUZEE_DATASOURCES0_PASSWORD
+          ports:
+            - containerPort: 8080
+              name: server
+              protocol: TCP
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: image-catalog
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: server
+  selector:
+    app: image-catalog
