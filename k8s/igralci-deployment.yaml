@@ -13,7 +13,7 @@ spec:
         app: igralci
     spec:
       containers:
-        - image: prporso/image-catalog:2021-11-02-17-26-12
+        - image: ts4894/igralci:2021-11-30-00-46-53
           name: igralci
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
@@ -35,7 +35,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: image-catalog
+  name: igralci
 spec:
   type: LoadBalancer
   ports:
@@ -43,4 +43,4 @@ spec:
       protocol: TCP
       targetPort: server
   selector:
-    app: image-catalog
+    app: igralci
