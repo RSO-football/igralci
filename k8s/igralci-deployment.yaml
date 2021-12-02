@@ -17,7 +17,7 @@ spec:
           name: igralci
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
-              value: jdbc:postgresql://igralci-db.postgres.database.azure.com:5432/{your_database}?user=postgresAdmin&password={your_password}&sslmode=require
+              value: jdbc:postgresql://igralci-db.postgres.database.azure.com:5432/postgres?user=postgresAdmin&password=IgralciDBPass123&sslmode=require
             - name: KUMULUZEE_DATASOURCES0_USERNAME
               value: postgresAdmin
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
@@ -29,6 +29,19 @@ spec:
             - containerPort: 8080
               name: server
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: server
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: server
+            initialDelaySeconds: 60
+            periodSeconds: 10
+
 
 ---
 
