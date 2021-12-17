@@ -13,7 +13,7 @@ spec:
         app: igralci
     spec:
       containers:
-        - image: ts4894/igralci:2021-12-02-20-29-13
+        - image: ts4894/igralci:2021-12-18-01-40-26
           name: igralci
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL

@@ -4,14 +4,13 @@ kumuluzee:
     name: dev
   version: 1.0.0
   server:
-    base-url: http://20.120.65.121:8080
+    base-url: http://20.120.65.121:8081
     http:
-      port: 8080
+      port: 8081
   datasources:
     - jndi-name: jdbc/IgralciMetadataDS
       connection-url: jdbc:postgresql://igralci-db.postgres.database.azure.com:5432/postgres?user=postgresAdmin&sslmode=require
       username: postgresAdmin
-      password: IgralciDBPass123
   health:
     checks:
       data-source-health-check:
