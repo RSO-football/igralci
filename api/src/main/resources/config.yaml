@@ -9,7 +9,7 @@ kumuluzee:
       port: 8080
   datasources:
     - jndi-name: jdbc/IgralciMetadataDS
-      connection-url: jdbc:postgresql://igralci-db.postgres.database.azure.com:5432/postgres?user=postgresAdmin&password=IgralciDBPass123&sslmode=require
+      connection-url: jdbc:postgresql://igralci-db.postgres.database.azure.com:5432/postgres?user=postgresAdmin&sslmode=require
       username: postgresAdmin
       password: IgralciDBPass123
   health:
