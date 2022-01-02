@@ -1,5 +1,6 @@
 package rso.football.igralci.api.v1.resources;
 
+import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import rso.football.igralci.lib.IgralciMetadata;
 import rso.football.igralci.services.beans.IgralciMetadataBean;
 
