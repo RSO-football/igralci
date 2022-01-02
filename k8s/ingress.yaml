@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: proxy-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: 
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /igrisca(/|$)(.*)
+            backend:
+              serviceName: igrisca
+              servicePort: 8080
+          - path: /igralci(/|$)(.*)
+            backend:
+              serviceName: igralci
+              servicePort: 8081
+          - path: /rezervacije(/|$)(.*)
+            backend:
+              serviceName: rezervacije
+              servicePort: 8082            
+          - path: /uporabniki(/|$)(.*)
+            backend:
+              serviceName: uporabniki
+              servicePort: 8083     
+          - path: /postavke(/|$)(.*)
+            backend:
+              serviceName: postavke
+              servicePort: 8084
+          - path: /rekviziti(/|$)(.*)
+            backend:
+              serviceName: rekviziti
+              servicePort: 8085
+
+#kubectl get ingress

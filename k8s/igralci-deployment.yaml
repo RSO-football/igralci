@@ -13,14 +13,10 @@ spec:
         app: igralci
     spec:
       containers:
-        - image: ts4894/igralci:2021-12-18-01-40-26
+        - image: ts4894/igralci:2021-12-18-01-50-10
           name: igralci
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
-              value: jdbc:postgresql://igralci-db.postgres.database.azure.com:5432/postgres?user=postgresAdmin&sslmode=require
-            - name: KUMULUZEE_DATASOURCES0_USERNAME
-              value: postgresAdmin
-            - name: KUMULUZEE_DATASOURCES0_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: pg-pas-igralci
