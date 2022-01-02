@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 @Path("/igralci")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@CrossOrigin(supportedMethods = "GET, POST, DELETE, PUT, HEAD, OPTIONS")
 public class IgralciMetadataResource {
 
     private Logger log = Logger.getLogger(IgralciMetadataResource.class.getName());
