@@ -4,12 +4,12 @@ kumuluzee:
     name: dev
   version: 1.0.0
   server:
-    base-url: http://20.120.65.121:8081
+    base-url: http://localhost:8081
     http:
       port: 8081
   datasources:
     - jndi-name: jdbc/IgralciMetadataDS
-      connection-url: jdbc:postgresql://igralci-db.postgres.database.azure.com:5432/postgres?user=postgresAdmin&sslmode=require
+      connection-url: jdbc:postgresql://igralci-db.postgres.database.azure.com:5432/postgres?user=postgresAdmin&password=IgralciDBPass123&sslmode=require
       username: postgresAdmin
   cors-filter:
     annotations:
@@ -28,7 +28,7 @@ kumuluzee:
   rest-client:
     registrations:
       - class: igralci-processing-api
-        url: http://20.120.65.121:8082/v1
+        url: http://localhost:8082/v1
         read-timeout: 5000
 rest-properties:
   maintenance-mode: false
