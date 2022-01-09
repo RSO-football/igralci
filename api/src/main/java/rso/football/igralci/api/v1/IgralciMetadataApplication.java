@@ -15,7 +15,7 @@ import javax.ws.rs.core.Application;
 @OpenAPIDefinition(info = @Info(title = "Igralci API", version = "v1",
         contact = @Contact(email = "rb2600@student.uni-lj.si"),
         license = @License(name = "dev"), description = "API for managing igralci metadata."),
-        servers = @Server(url = "http://localhost:8081/"))
+        servers = @Server(url = "http://40.71.236.184:8081/"))
 @ApplicationPath("/v1")
 public class IgralciMetadataApplication extends Application {
 
