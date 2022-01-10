@@ -48,7 +48,7 @@ kumuluzee:
   rest-client:
     registrations:
       - class: igralci-processing-api
-        url: http://localhost:8082/v1
+        url: https://localhost:8082/v1
         read-timeout: 5000
 rest-properties:
   maintenance-mode: false
