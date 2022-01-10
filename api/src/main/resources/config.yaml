@@ -4,7 +4,7 @@ kumuluzee:
     name: dev
   version: 1.0.0
   server:
-    base-url: http://40.71.236.184:8081
+    base-url: https://40.71.236.184:8081
     http:
       port: 8081
   datasources:
